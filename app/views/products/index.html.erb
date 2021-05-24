@@ -1,0 +1,17 @@
+<div class="card "  position="center">
+  <div class="card-body">
+<h1>Products</h1>
+<ul>
+  <% @products.each do |product| %>
+  <br>
+    <li>
+     <!--2. <a href="<%= product_path(product) %>"> </a>-->
+     <!--1. <a href="/products/<%= product.id %>"> </a>-->
+      <h5><%= link_to product.name, product %></h5>
+    </li>
+  <% end %>
+</ul>
+<br>
+<%= link_to "New Product", new_product_path(@product) , class: "btn btn-secondary" %>
+</div>
+</div>
