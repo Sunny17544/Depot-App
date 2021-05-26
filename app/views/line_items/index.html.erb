@@ -1,0 +1,50 @@
+<h1>LineItems#index</h1>
+<p>Find me in app/views/line_items/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<h1>Carts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carts.each do |cart| %>
+      <tr>
+        <td><%= cart.title %></td>
+        <td><%= cart.price %></td>
+        <td><%= link_to 'Show', line_item_path(cart) %></td>
+        
+
+         <td>
+
+        
+          <%= form_for @order_item, remote: true  do |f|%>
+          <%= f.hidden_field :cart_id, :value => cart.id %>
+          <%= f.number_field :quantity, :value => 1, :min =>  1%>
+          <%= f.submit "Add to Cart"%>
+
+
+          <% end %>
+        </td>
+
+
+
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%#= link_to "#{current_order.order_items.size} items with a value of #{current_order.subtotal}$", cards_path %>
+
+<div id="card">
+  <%= render 'cards/card'%>
+</div>
