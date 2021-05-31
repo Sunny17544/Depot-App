@@ -1,5 +1,3 @@
-<br>
-<br>
 <!doctype html>
 <html lang="en">
   <head>
@@ -18,10 +16,38 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-    <span>
-    <div class="mx-auto" style=" width: 560px;">
-     <%= yield %>
+  
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #000080;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="<%= products_path(@product) %>">Depot App</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<%= products_path(@product) %>">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<%= line_items_path(@cart) %>">Cart</a>
+        </li>
+      
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="<%= new_product_path(@product) %>">New Product</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <!--<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
+        <button class="btn btn-outline-warning" type="submit">Sign In</button>
+      </form>
     </div>
+  </div>
+</nav>
+<br>
+<br>
+    <span>
+    <div class="mx-auto" >
+     <%= yield %>
     </span>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
   </body>

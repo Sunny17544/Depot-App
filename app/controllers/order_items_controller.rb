@@ -29,7 +29,6 @@ class OrderItemsController < ApplicationController
 
 
 
-
     private
 
     def order_params
