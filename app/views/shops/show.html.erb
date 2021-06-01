@@ -1,5 +1,4 @@
-
-<div class="card" position="center">
+<div class="container"  height= "300px" style=" width: 500px">
   <div class="card-body">
   <table class="table">
 <h1><%= @product.name %></h1>
@@ -24,9 +23,9 @@
   <%= number_to_indian_currency(@product.price) %>
 </p>
 </table>
-  <%= link_to "Edit", edit_product_path(@product), class: "btn btn-primary btn-sm" %>
-  <%= link_to "Home", products_path(@product), class: "btn btn-secondary btn-sm" %>
-  <%= link_to "Destroy", product_path(@product), class: "btn btn-danger btn-sm", method: :delete, data: { confirm: "Are you sure...You want to delete the Product? " } %><br><br>
+  
+  <%= link_to "Home", shops_path(@product), class: "btn btn-secondary btn-sm" %>
+  <br><br>
   <%= link_to "Add to Cart", line_items_path(@product), class: "btn btn-warning" %>
 </div>
 </div>

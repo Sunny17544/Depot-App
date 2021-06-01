@@ -1,1 +1,1 @@
-<h4><%= link_to " Click to View Items", cards_path%></h4>
+<%= link_to "#{current_order.order_items.size} items with a value of #{current_order.subtotal }$", cards_path%>

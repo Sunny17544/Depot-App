@@ -1,30 +1,32 @@
 <div class="container">
 <h1>Cards</h1>
-<!--<p>Find me in app/views/cards/show.html.erb</p>-->
-
 <br>
 <br>
 <% @order_items.each do |item| %>
-    <h3><strong>Item: </strong><%= item.cart.title %></h3>
-    <h5><strong>Price: </strong><%= item.cart.price %></h5>
 
+    <h3><%= item.product.name %></h3>
+    <h5><%= number_to_indian_currency(item.product.price) %></h5>
+    
+    <br>
 
     <%= form_for item, remote: true do |f| %>
 
 
 
-        <%= f.hidden_field :cart_id, :value => item.cart.id %>
-        <%= f.number_field :quantity, :value => item.quantity.to_i %>
-        <%= f.submit "Update Card ", class: "btn btn-secondary btn-sm" %>
-        <%= link_to "Remove", order_item_path(item), class: "btn btn-primary btn-sm", method: :delete, remote: true %>
+        <%= f.hidden_field :product_id, :value => item.product.id %>
+        <%= f.number_field :quantity, :value => item.quantity.to_i, min: 1 %>
+        <%= f.submit "Update Card ", class: "btn btn-primary btn-sm"%>
+        <%= link_to "Remove Item", order_item_path(item), method: :delete, remote: true , class: "btn btn-danger btn-sm" %>
 
     <% end %>
     <br>
-    <h6>Subtotal: <%= item.total %></h6>
-<br>
+    <!--<h2>Subtotal: <%= item.total %></h2>-->
 <br>
 <% end %>
 
-<!--<h5>Your current card value has a subtotal of: <%= current_order.subtotal %></h5>-->
+
+
+
+<h3>Your current number of items are: <%= current_order.subtotal %></h3>
 <br>
 </div>

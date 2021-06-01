@@ -6,4 +6,5 @@ class Product < ApplicationRecord
     validates :price, presence: true, numericality: { greater_than_or_equal_to: 1 }
     validates :image, presence: true
     has_one_attached :image
+    has_many :order_items
 end
