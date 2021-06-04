@@ -8,11 +8,16 @@
 // </div>
 
 import { Controller } from "stimulus"
-
 export default class extends Controller {
-  static targets = [ "output" ]
+  static targets = [ "detail" ]
 
-  connect() {
-    this.outputTarget.textContent = 'Hello, Stimulus!'
+
+
+  greet()
+  {
+    // var nameStr=1;
+    // alert(nameStr)
+    // console.log("Hello World")
+    alert(this.detailTarget.textContent)
   }
 }

@@ -16,16 +16,24 @@
         <%= f.hidden_field :product_id, :value => item.product.id %>
         <%= f.number_field :quantity, :value => item.quantity.to_i, min: 1 %>
         <%= f.submit "Update Card ", class: "btn btn-primary btn-sm"%>
-        <%= link_to "Remove Item", order_item_path(item), method: :delete, remote: true , class: "btn btn-danger btn-sm" %>
-
+        <%= link_to "Remove Item", order_item_path(item), method: :delete, remote: true , class: "btn btn-danger btn-sm", data: { confirm: 'Are you sure? You want to delete this Product' }  %>
+        
     <% end %>
     <br>
     <!--<h2>Subtotal: <%= item.total %></h2>-->
+
+  <div data-controller="hello">
+  
+  <div class = "detail" data-target="hello.detail">
+   <p><strong> <%= item.product.name %> </strong>
+   <br><%= number_to_indian_currency(item.product.price) %></p>
+   </div>
+   <button data-action="click->hello#greet">alert</button>
+  </div>
+
+<br>
 <br>
 <% end %>
 
-<br>
 
-<h3>Your current number of Products are: <%= current_order.subtotal %></h3>
-<br>
-</div>
+

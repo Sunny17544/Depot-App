@@ -1,1 +1,13 @@
-<%= link_to "Click here to check the Products ", cards_path%>
+<%= link_to "Click here to check the Products ", cards_path%><br>
+<br>
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+  <div data-controller="hello" >
+  <div data-hello-target="detail">
+  
+
+  </div>
+  <button data-action="click->hello#greet" >Products</button>
+  </div>
+<br><br>
