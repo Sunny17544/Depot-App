@@ -1,13 +1,14 @@
 <div class="container">
-<h1>Cards</h1>
+<h1>Cart_Items</h1>
 <br>
 <br>
 <% @order_items.each do |item| %>
-
+    <%= image_tag(item.product.image, :size => "200x200")%><br>
+    <br>
     <h3><%= item.product.name %></h3>
     <h5><%= number_to_indian_currency(item.product.price) %></h5>
     
-    <br>
+    
 
     <%= form_for item, remote: true do |f| %>
 
@@ -15,22 +16,23 @@
 
         <%= f.hidden_field :product_id, :value => item.product.id %>
         <%= f.number_field :quantity, :value => item.quantity.to_i, min: 1 %>
-        <%= f.submit "Update Card ", class: "btn btn-primary btn-sm"%>
+        <%= f.submit "Update Card ", class: "btn btn-primary btn-sm", data: { confirm: 'Product Updated Succesfully' }%>
         <%= link_to "Remove Item", order_item_path(item), method: :delete, remote: true , class: "btn btn-danger btn-sm", data: { confirm: 'Are you sure? You want to delete this Product' }  %>
         
-    <% end %>
-    <br>
-    <!--<h2>Subtotal: <%= item.total %></h2>-->
+    <% end %><br>
+    <h2>Subtotal: <%= number_to_indian_currency(item.product.price * item.total)%></h2>
 
   <div data-controller="hello">
   
   <div class = "detail" data-target="hello.detail">
-   <p><strong> <%= item.product.name %> </strong>
-   <br><%= number_to_indian_currency(item.product.price) %></p>
+   <!--<p><strong> <%= item.product.name %> </strong>
+   <br><%= number_to_indian_currency(item.product.price) %></p>-->
    </div>
    <button data-action="click->hello#greet">alert</button>
   </div>
-
+<br>
+<br>
+<br>
 <br>
 <br>
 <% end %>
