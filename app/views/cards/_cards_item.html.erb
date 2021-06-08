@@ -2,6 +2,7 @@
 <h1>Cart_Items</h1>
 <br>
 <br>
+<br>
 <% @order_items.each do |item| %>
     <%= image_tag(item.product.image, :size => "200x200")%><br>
     <br>
@@ -11,9 +12,6 @@
     
 
     <%= form_for item, remote: true do |f| %>
-
-
-
         <%= f.hidden_field :product_id, :value => item.product.id %>
         <%= f.number_field :quantity, :value => item.quantity.to_i, min: 1 %>
         <%= f.submit "Update Card ", class: "btn btn-primary btn-sm", data: { confirm: 'Product Updated Succesfully' }%>

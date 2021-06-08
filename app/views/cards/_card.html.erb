@@ -1,15 +1,17 @@
-<br >
-<%= link_to "Click here to check the Cart ", cards_path, class: "btn btn-success btn-sm"%><br>
+<br>
+<h4><%= "#{current_order.order_items.size} products with a total number of #{current_order.subtotal} sub products are there in Cart"%></h4><br>
+<br>
+<%= link_to "Go to Cart", cards_path, class: "btn btn-success " %>
 <br>
 <br>
-<% if notice %>
-<p id="notice"><%= notice %></p>
-<% end %>
-  <div data-controller="hello" >
+<%# if notice %>
+<!--<p id="notice"><%= notice %></p>-->
+<%# end %>
+  <!--<div data-controller="hello" >
   <div data-hello-target="detail">
   
 
   </div>
   <button data-action="click->hello#greet" >Products</button>
-  </div>
-<br><br>
+  </div>-->
+<!--<br><br>-->
