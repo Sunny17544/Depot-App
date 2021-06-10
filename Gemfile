@@ -23,6 +23,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'jquery-rails', '~> 4.4'
 gem 'rb-readline'
 gem 'turbolinks', '~> 2.5', '>= 2.5.3'
+gem 'jquery-turbolinks', '~> 2.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 gem 'uglifier', '>=1.3.0'

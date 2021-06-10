@@ -41,3 +41,30 @@
 </div>
 <%#= link_to "#{current_order.order_items.size} products with a total number of #{current_order.subtotal} sub products are there.", cards_path %><br><br>
 </div>
+
+
+<!--<div class="container">
+<article>
+  <% if notice %>
+    <aside id="notice"><%= notice %></aside>
+  <% end %>
+<h2>Your Cart</h2>
+<table>
+  <tr>
+    <td class="quantity"><%= @products.name %></td>
+    <td><%= @products.name %></td>
+    <td class="price"><%= number_to_currency(@products.name) %></td>
+  </tr>
+  <tfoot> 
+    <tr>
+      <th colspan="2">Total:</th>
+      <td class="price"><%= number_to_currency(@products.name) %></td>
+    </tr>
+  </tfoot>
+  </table>
+  <%= button_to 'Empty cart', cards_show_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+</article>
+</div>
+
+<br>
+<br>-->

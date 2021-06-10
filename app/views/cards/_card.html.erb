@@ -4,6 +4,11 @@
 <%= link_to "Go to Cart", cards_path, class: "btn btn-success " %>
 <br>
 <br>
+<div data-controller='cart'>
+<button data-action='cart#load'>Fetch!</button>
+</div>
+<br>
+<br>
 <%# if notice %>
 <!--<p id="notice"><%= notice %></p>-->
 <%# end %>
