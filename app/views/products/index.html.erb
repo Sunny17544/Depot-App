@@ -4,7 +4,8 @@
  <div class="card-body">
   <% @products.each do |product| %>
   <br>
-  <h5 class="card-title"><%= link_to product.name, product %></h5><br>
+  <h5 class="card-title"><%= link_to product.name, product %></h5>
+  <h6 class="card-title"><%= product.model %></h6><br>
   <div class="pin-image"><%= image_tag(product.image,style: 'width:100%') %><br></div><br>
   <%= link_to "Details", product_path(product), class: "btn btn-primary btn-sm" %>
   <%#= link_to "Add to Cart", products_path(product), class: "btn btn-secondary btn-sm" %>

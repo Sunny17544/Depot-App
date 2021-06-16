@@ -11,7 +11,7 @@ import "channels"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
-require("@rails/ujs").start()
+//require("@rails/ujs").start()
 require("turbolinks").start()
 
 import "controllers"

@@ -2,9 +2,10 @@
 <h1>Shop Products</h1>
 <div  class="mx-auto" height= "300px" style=" width: 400px;">
  <div class="card-body">
+ <div data-controller="hello" data-hello-url-value="http://localhost:3000/line_items" data-hello-count-value= 0  class="image-container"  >
   <% @products.each do |product| %>
   <br>
-  <h5 class="card-title"><%= product.name%></h5><br>
+  <h5 class="card-title"><%= product.name%> <%= product.model%></h5><br>
   <div class="pin-image"><%= image_tag(product.image,style: 'width:100%') %><br></div><br>
   <%= link_to "Details", shop_path(product), class: "btn btn-primary btn-sm" %>
   <%#= link_to "Add to Cart", products_path(product), class: "btn btn-secondary btn-sm" %>
