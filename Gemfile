@@ -29,6 +29,7 @@ gem 'jquery-turbolinks', '~> 2.1'
 gem 'uglifier', '>=1.3.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+gem 'stripe', '~> 1.57', '>= 1.57.1'
 
 gem 'rexml', '~> 3.2', '>= 3.2.4'
 # Use Active Storage variant

@@ -8,15 +8,6 @@ export default class extends Controller
   load()
   {
     const csrfToken = document.querySelector("[name='csrf-token']").getAttribute("content")
-    //let id = 31;
-
-    //fetch("http://localhost:3000/order_items", 
-    //{
-        //method: 'POST',
-       //headers: { "X-CSRF-Token": csrfToken, 
-       //"Content-type": "application/json"},
-       //body:JSON.stringify({product_id: id})
-   // })
 
 
     fetch("http://localhost:3000/cards")

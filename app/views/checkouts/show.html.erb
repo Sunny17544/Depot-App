@@ -1,0 +1,29 @@
+<br>
+<div class="container"  height= "300px" style=" width: 500px">
+<div class="card" position="center">
+ <div class="card-body">
+<h1> Payment Details</h1> <br>
+<p id="notice"><%= notice %></p>
+  <h3><%= @checkout.name %></h3>
+
+<p>
+<br>
+  <strong>Address:</strong><br>
+  <%= @checkout.address %>
+</p>
+
+<p>
+  <strong>Email:</strong><br>
+  <%= @checkout.email %>
+</p>
+
+<p>
+  <strong>Pay type:</strong><br>
+  <%= @checkout.pay_type %>
+</p>
+<br>
+<%= link_to 'Edit', edit_checkout_path(@checkout), class: "btn btn-primary btn-sm" %>
+<%= link_to 'Back', checkouts_path, class: "btn btn-secondary btn-sm" %>
+</div>
+</div>
+</div>

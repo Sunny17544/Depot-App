@@ -19,7 +19,6 @@
         
     <% end %><br>
     <h2>Subtotal: <%= number_to_indian_currency(item.product.price * item.quantity.to_i) %></h2>
-
   <div data-controller="hello">
   
   <div class = "detail" data-hello-target="detail">
@@ -31,9 +30,9 @@
 <br>
 <br>
 <br>
-<br>
-<br>
 <% end %>
+<h1>Total: <%= number_to_indian_currency(@order) %></h1>
+<%= link_to "Proceed to checkout", new_checkout_path, class: "btn btn-primary btn-sm" %><br>
 
 
 

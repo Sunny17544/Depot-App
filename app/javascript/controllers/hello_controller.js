@@ -30,9 +30,9 @@ CartAdd(event)
 {
   console.log("Working")
   const csrf = document.querySelector("[name='csrf-token']").getAttribute("content");
-  var product_id= event.target.id
-  const data={product_id: product_id, quantity: 2 }
-  var url=this.urlValue
+  var product_id= event.target.id;
+  const data={product_id: product_id , quantity: 1}
+  var url=this.urlValue;
 
   fetch(url,
   {
@@ -49,7 +49,7 @@ CartAdd(event)
     if (response.status == 200 ) 
     { 
       this.countValue=this.countValue+1 ; 
-      this.cartTarget.textContent=this.countValue
+      this.cartTarget.textContent=this.countValue;
     } 
     else if(response.status == 404) 
     { 

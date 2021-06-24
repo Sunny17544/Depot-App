@@ -2,6 +2,7 @@ class OrderItem < ApplicationRecord
 
     belongs_to :order
     belongs_to :product
+    #belongs_to :checkout
 
 
     #before_save :set_unit_price
